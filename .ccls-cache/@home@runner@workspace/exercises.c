@@ -6,6 +6,8 @@
 #include "arraylist.h"
 #include "stack.h"
 
+//#include "exercises.h"
+
 //Funciones auxiliares que puedes utilizar para debuggear tus ejercicios
 //NO MODIFICAR
 void imprime_lista(List *L) {
@@ -17,6 +19,7 @@ void imprime_lista(List *L) {
       dato = (int*)next(L);
    }
    printf("]\n");
+
 }
 
 //Ojo que la pila se vacía al imprimir y se imprime en orden inverso
@@ -46,12 +49,12 @@ List* crea_lista() {
    }
    return L;
 }
-
 /*
 Ejercicio 2.
 Crea una función que reciba una lista de enteros (int*) y 
 retorne la suma de sus elementos.
 */
+
 int sumaLista(List *L) {
    int suma = 0;
    int *dato = (int*)first(L);
@@ -61,7 +64,6 @@ int sumaLista(List *L) {
    }
    return suma;
 }
-
 /*
 Ejercicio 3.
 Crea una función que reciba una lista de punteros a int (int*) y
@@ -70,15 +72,9 @@ de la lista que sean iguales a elem.
 Asume que popCurrent luego de eliminar un elemento se
 posiciona en el elemento anterior.
 */
-void eliminaElementos(List* L, int elem) {
-   int *dato = (int*)first(L);
-   while (dato != NULL) {
-      if (*dato == elem) {
-         popCurrent(L);
-      } else {
-         dato = (int*)next(L);
-      }
-   }
+
+void eliminaElementos(List*L, int elem) {
+
 }
 
 /*
@@ -87,16 +83,8 @@ La función copia los punteros de la pila P1 en la pila P2.
 El orden de ambas pilas se debe mantener.
 Puedes usar una pila auxiliar.
 */
+
 void copia_pila(Stack* P1, Stack* P2) {
-   Stack* Paux = create_stack();
-   void *dato;
-   while ((dato = pop(P1)) != NULL) {
-      push(Paux, dato);
-   }
-   while ((dato = pop(Paux)) != NULL) {
-      push(P1, dato);
-      push(P2, dato);
-   }
 }
 
 /*
@@ -105,20 +93,7 @@ La función verifica si la cadena de entrada tiene sus
 paraéntesis balanceados. Retorna 1 si están balanceados,
 0 en caso contrario.
 */
+
 int parentesisBalanceados(char *cadena) {
-   Stack* P = create_stack();
-   for (int i = 0; i < strlen(cadena); i++) {
-      if (cadena[i] == '(' || cadena[i] == '[' || cadena[i] == '{') {
-         push(P, &cadena[i]);
-      } else if (cadena[i] == ')' || cadena[i] == ']' || cadena[i] == '}') {
-         if (get_size(P) == 0) return 0;
-         char *top_char = (char*)pop(P);
-         if ((cadena[i] == ')' && *top_char != '(') ||
-             (cadena[i] == ']' && *top_char != '[') ||
-             (cadena[i] == '}' && *top_char != '{')) {
-            return 0;
-         }
-      }
-   }
-   return get_size(P) == 0;
+   return 0;
 }

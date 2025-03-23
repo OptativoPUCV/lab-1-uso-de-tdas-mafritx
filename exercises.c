@@ -72,7 +72,8 @@ de la lista que sean iguales a elem.
 Asume que popCurrent luego de eliminar un elemento se
 posiciona en el elemento anterior.
 */
-void eliminaElementos(List*L, int elem){
+
+void eliminaElementos(List*L, int elem) {
 
 }
 
