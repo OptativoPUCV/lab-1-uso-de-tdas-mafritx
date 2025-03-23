@@ -40,11 +40,7 @@ Recuerda que la lista almacena punteros, por lo que
 debes reservar memoria para cada elemento que agregues.
 Al finalizar retorna la lista creada.
 */
-typedef struct {
-    int** ele;
-    int cap;
-    int size;
-} List;
+
 
 
 
