@@ -2852,3 +2852,14 @@ test.c:100:17: error: implicit declaration of function ‘sumaLista’ [-Werror=
 cc1: all warnings being treated as errors
 Compilation failed
 eae1caa
+Sun 23 Mar 2025 08:28:57 PM UTC: 
+ exercises.c | 68 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---
+ 1 file changed, 65 insertions(+), 3 deletions(-)
+In file included from test.c:5:
+exercises.c: In function ‘copia_pila’:
+exercises.c:155:12: error: implicit declaration of function ‘is_empty’ [-Werror=implicit-function-declaration]
+  155 |    while (!is_empty(P1)) {
+      |            ^~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+a7e25e4

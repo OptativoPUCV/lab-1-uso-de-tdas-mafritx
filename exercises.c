@@ -101,6 +101,18 @@ int sumaLista(List *L) {
    return suma;
 }
 */
+
+int sumaLista(List *L) {
+   int suma = 0;
+   int *dato = (int*)first(L);
+
+   while (dato != NULL) {
+      suma += *dato;
+      dato = (int*)next(L);
+   }
+
+   return suma;
+}
 /*
 Ejercicio 3.
 Crea una función que reciba una lista de punteros a int (int*) y
@@ -109,19 +121,48 @@ de la lista que sean iguales a elem.
 Asume que popCurrent luego de eliminar un elemento se
 posiciona en el elemento anterior.
 */
-
+/*
 void eliminaElementos(List*L, int elem){
 
 }
+*/
 
+void eliminaElementos(List* L, int elem) {
+   int *dato = (int*)first(L);
+
+   while (dato != NULL) {
+      if (*dato == elem) {
+         popCurrent(L); // Remove the current element
+      } else {
+         dato = (int*)next(L);
+      }
+   }
+}
 /*
 Ejercicio 4.
 La función copia los punteros de la pila P1 en la pila P2.
 El orden de ambas pilas se debe mantener.
 Puedes usar una pila auxiliar.
 */
-
+/*
 void copia_pila(Stack* P1, Stack* P2) {
+}
+*/
+void copia_pila(Stack* P1, Stack* P2) {
+   Stack* aux = create_stack();
+
+   // First, reverse P1 into aux
+   while (!is_empty(P1)) {
+      void* dato = pop(P1);
+      push(aux, dato);
+   }
+
+   // Then, reverse aux into P2 and restore P1
+   while (!is_empty(aux)) {
+      void* dato = pop(aux);
+      push(P1, dato);
+      push(P2, dato);
+   }
 }
 
 /*
@@ -130,8 +171,29 @@ La función verifica si la cadena de entrada tiene sus
 paraéntesis balanceados. Retorna 1 si están balanceados,
 0 en caso contrario.
 */
-
+/*
 int parentesisBalanceados(char *cadena) {
    return 0;
 }
+*/
+int parentesisBalanceados(char *cadena) {
+   Stack* P = create_stack();
 
+   for (int i = 0; cadena[i] != '\0'; i++) {
+      if (cadena[i] == '(' || cadena[i] == '[' || cadena[i] == '{') {
+         push(P, &cadena[i]);
+      } else if (cadena[i] == ')' || cadena[i] == ']' || cadena[i] == '}') {
+         if (is_empty(P)) {
+            return 0; // Unbalanced
+         }
+         char* top_char = (char*)pop(P);
+         if ((cadena[i] == ')' && *top_char != '(') ||
+             (cadena[i] == ']' && *top_char != '[') ||
+             (cadena[i] == '}' && *top_char != '{')) {
+            return 0; // Unbalanced
+         }
+      }
+   }
+
+   return is_empty(P); // Balanced if stack is empty
+}
