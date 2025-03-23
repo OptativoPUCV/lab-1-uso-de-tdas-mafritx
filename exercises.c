@@ -43,7 +43,9 @@ Al finalizar retorna la lista creada.
 
 
 List* crea_lista() {
+   List* L = create_list();
 
+   
     List* L = NULL;      // Puntero al inicio de la lista
     List* current = NULL; // Puntero para recorrer la lista
 

@@ -2249,3 +2249,28 @@ exercises.c:77:20: error: invalid use of incomplete typedef ‘List’
       |                    ^~
 Compilation failed
 db5489d
+Sun 23 Mar 2025 06:21:05 PM UTC: 
+ exercises.c | 2 ++
+ 1 file changed, 2 insertions(+)
+In file included from test.c:5:
+exercises.c: In function ‘crea_lista’:
+exercises.c:49:11: error: redefinition of ‘L’
+   49 |     List* L = NULL;      // Puntero al inicio de la lista
+      |           ^
+exercises.c:46:10: note: previous definition of ‘L’ with type ‘List *’
+   46 |    List* L = create_list();
+      |          ^
+exercises.c:64:43: error: invalid application of ‘sizeof’ to incomplete type ‘List’
+   64 |         List* temp = (List*)malloc(sizeof(List));
+      |                                           ^~~~
+exercises.c:70:13: error: invalid use of incomplete typedef ‘List’
+   70 |         temp->data = num;
+      |             ^~
+exercises.c:71:13: error: invalid use of incomplete typedef ‘List’
+   71 |         temp->next = NULL;
+      |             ^~
+exercises.c:79:20: error: invalid use of incomplete typedef ‘List’
+   79 |             current->next = temp;
+      |                    ^~
+Compilation failed
+751d820
