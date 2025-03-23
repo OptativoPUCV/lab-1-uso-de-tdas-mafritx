@@ -58,7 +58,7 @@ List* crea_lista() {
       *element = i;
 
         
-      L->data[L->size] = element;
+      L->data[L->size] = (void*)element;
       L->size++;
     }
    return L;
