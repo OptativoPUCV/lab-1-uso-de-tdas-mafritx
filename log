@@ -2576,3 +2576,53 @@ exercises.c:62:8: error: invalid use of incomplete typedef ‘List’
       |        ^~
 Compilation failed
 1cff4b0
+Sun 23 Mar 2025 07:33:31 PM UTC: 
+ exercises.c | 5 +++++
+ 1 file changed, 5 insertions(+)
+In file included from test.c:5:
+exercises.c: In function ‘crea_lista’:
+exercises.c:50:12: error: invalid use of incomplete typedef ‘List’
+   50 |       if (L->size >= 100) {
+      |            ^~
+exercises.c:61:8: error: invalid use of incomplete typedef ‘List’
+   61 |       L->data[L->size] = (void*)element;
+      |        ^~
+exercises.c:61:16: error: invalid use of incomplete typedef ‘List’
+   61 |       L->data[L->size] = (void*)element;
+      |                ^~
+exercises.c:62:8: error: invalid use of incomplete typedef ‘List’
+   62 |       L->size++;
+      |        ^~
+exercises.c:64:25: error: invalid use of incomplete typedef ‘List’
+   64 |    for (int i = 0; i < L->size; i++)
+      |                         ^~
+exercises.c:65:7: error: expected expression before ‘int’
+   65 |       int* element = (int*)L->data[i];
+      |       ^~~
+exercises.c:64:4: error: this ‘for’ clause does not guard... [-Werror=misleading-indentation]
+   64 |    for (int i = 0; i < L->size; i++)
+      |    ^~~
+exercises.c:66:7: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘for’
+   66 |       printf("%d ", *element);
+      |       ^~~~~~
+exercises.c:66:22: error: ‘element’ undeclared (first use in this function)
+   66 |       printf("%d ", *element);
+      |                      ^~~~~~~
+exercises.c:66:22: note: each undeclared identifier is reported only once for each function it appears in
+exercises.c: At top level:
+exercises.c:68:11: error: expected declaration specifiers or ‘...’ before string constant
+   68 |    printf("\n");
+      |           ^~~~
+exercises.c:70:4: error: expected identifier or ‘(’ before ‘return’
+   70 |    return L;
+      |    ^~~~~~
+exercises.c:71:1: error: expected identifier or ‘(’ before ‘}’ token
+   71 | }
+      | ^
+exercises.c: In function ‘crea_lista’:
+exercises.c:67:4: error: control reaches end of non-void function [-Werror=return-type]
+   67 |    }
+      |    ^
+cc1: all warnings being treated as errors
+Compilation failed
+ea46f36

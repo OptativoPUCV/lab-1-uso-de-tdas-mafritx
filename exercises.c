@@ -61,6 +61,11 @@ List* crea_lista() {
       L->data[L->size] = (void*)element;
       L->size++;
    }
+   for (int i = 0; i < L->size; i++) 
+      int* element = (int*)L->data[i];
+      printf("%d ", *element);
+   }
+   printf("\n");
 
    return L;
 }
