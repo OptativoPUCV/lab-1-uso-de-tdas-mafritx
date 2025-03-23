@@ -2200,3 +2200,14 @@ exercises.c:47:6: error: invalid use of incomplete typedef ‘List’
       |      ^~
 Compilation failed
 7e192d3
+Sun 23 Mar 2025 06:14:56 PM UTC: 
+ exercises.c | 22 +++++++++++++++-------
+ 1 file changed, 15 insertions(+), 7 deletions(-)
+In file included from test.c:5:
+exercises.c: In function ‘crea_lista’:
+exercises.c:60:9: error: implicit declaration of function ‘append’ [-Werror=implicit-function-declaration]
+   60 |         append(&L, num);
+      |         ^~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+a56d7be

@@ -41,18 +41,26 @@ debes reservar memoria para cada elemento que agregues.
 Al finalizar retorna la lista creada.
 */
 
-void agrega_ele(List* L, void* ele) {
-  if (L->size < 100) {
-    L->data[L->size] = ele;
-    L->size++;
-  }
-}
-
 
 List* crea_lista() {
 
    List* L = create_list();
 
+    
+    for (int i = 1; i <= 10; i++) {
+        
+        int* num = (int*)malloc(sizeof(int));
+        if (num == NULL) {
+ 
+            return NULL;
+        }
+        *num = i;
+
+        
+        append(&L, num);
+    }
+
+   
    return L;
 }
 
