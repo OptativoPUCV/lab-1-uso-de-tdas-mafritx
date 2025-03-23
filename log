@@ -2375,3 +2375,29 @@ Sun 23 Mar 2025 06:39:37 PM UTC:
  tests:  0|5
 total_score: 0/70
 3c0bbba
+Sun 23 Mar 2025 06:44:44 PM UTC: 
+ exercises.c | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
+In file included from test.c:5:
+exercises.c: In function ‘crea_lista’:
+exercises.c:52:45: error: invalid application of ‘sizeof’ to incomplete type ‘List’
+   52 |       List* new_node = (List*)malloc(sizeof(List));
+      |                                             ^~~~
+exercises.c:53:15: error: invalid use of incomplete typedef ‘List’
+   53 |       new_node->data = element;
+      |               ^~
+exercises.c:54:15: error: invalid use of incomplete typedef ‘List’
+   54 |       new_node->next = NULL;
+      |               ^~
+exercises.c:59:14: error: invalid use of incomplete typedef ‘List’
+   59 |          temp->next = new_node;
+      |              ^~
+exercises.c:61:22: error: expected ‘;’ before ‘}’ token
+   61 |       temp = new_node
+      |                      ^
+      |                      ;
+......
+   64 |    }
+      |    ~                  
+Compilation failed
+ecb3b8e
