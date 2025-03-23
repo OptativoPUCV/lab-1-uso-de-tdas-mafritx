@@ -2887,3 +2887,96 @@ d52bf19
 Sun 23 Mar 2025 09:02:18 PM UTC: 
  exercises.c | 100 ++++++++----------------------------------------------------
  1 file changed, 13 insertions(+), 87 deletions(-)
+Sun 23 Mar 2025 09:06:29 PM UTC: 
+ exercises.c | 105 ------------------------------------------------------------
+ 1 file changed, 105 deletions(-)
+test.c: In function ‘test_crea_lista’:
+test.c:61:15: error: implicit declaration of function ‘crea_lista’; did you mean ‘create_list’? [-Werror=implicit-function-declaration]
+   61 |     List* L = crea_lista();
+      |               ^~~~~~~~~~
+      |               create_list
+test.c:61:15: error: initialization of ‘List *’ {aka ‘struct List *’} from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+test.c: In function ‘test_suma_lista’:
+test.c:100:17: error: implicit declaration of function ‘sumaLista’ [-Werror=implicit-function-declaration]
+  100 |     int suma2 = sumaLista(L);
+      |                 ^~~~~~~~~
+test.c: In function ‘test_elimina_elemento’:
+test.c:132:5: error: implicit declaration of function ‘eliminaElementos’; did you mean ‘test_elimina_elemento’? [-Werror=implicit-function-declaration]
+  132 |     eliminaElementos(L, elem);
+      |     ^~~~~~~~~~~~~~~~
+      |     test_elimina_elemento
+test.c: In function ‘test_copia_pila’:
+test.c:159:5: error: unknown type name ‘Stack’
+  159 |     Stack* P1 = create_stack();
+      |     ^~~~~
+test.c:159:17: error: implicit declaration of function ‘create_stack’ [-Werror=implicit-function-declaration]
+  159 |     Stack* P1 = create_stack();
+      |                 ^~~~~~~~~~~~
+test.c:159:17: error: initialization of ‘int *’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+test.c:160:5: error: unknown type name ‘Stack’
+  160 |     Stack* P2 = create_stack();
+      |     ^~~~~
+test.c:160:17: error: initialization of ‘int *’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+  160 |     Stack* P2 = create_stack();
+      |                 ^~~~~~~~~~~~
+test.c:161:5: error: unknown type name ‘Stack’
+  161 |     Stack* Paux = create_stack();
+      |     ^~~~~
+test.c:161:19: error: initialization of ‘int *’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+  161 |     Stack* Paux = create_stack();
+      |                   ^~~~~~~~~~~~
+test.c:169:8: error: implicit declaration of function ‘push’ [-Werror=implicit-function-declaration]
+  169 |        push(P1, dato);
+      |        ^~~~
+test.c:175:5: error: implicit declaration of function ‘copia_pila’; did you mean ‘test_copia_pila’? [-Werror=implicit-function-declaration]
+  175 |     copia_pila(P1, P2);
+      |     ^~~~~~~~~~
+      |     test_copia_pila
+test.c:176:12: error: implicit declaration of function ‘top’ [-Werror=implicit-function-declaration]
+  176 |     dato = top(P1);
+      |            ^~~
+test.c:176:10: error: assignment to ‘void *’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+  176 |     dato = top(P1);
+      |          ^
+test.c:177:19: error: initialization of ‘void *’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+  177 |     void* dato2 = top(P2);
+      |                   ^~~
+test.c:178:19: error: initialization of ‘void *’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+  178 |     void* dato3 = top(Paux);
+      |                   ^~~
+test.c:181:5: error: unknown type name ‘Stack’
+  181 |     Stack* P2copy = create_stack();
+      |     ^~~~~
+test.c:181:21: error: initialization of ‘int *’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+  181 |     Stack* P2copy = create_stack();
+      |                     ^~~~~~~~~~~~
+test.c:182:5: error: unknown type name ‘Stack’
+  182 |     Stack* P1copy = create_stack();
+      |     ^~~~~
+test.c:182:21: error: initialization of ‘int *’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+  182 |     Stack* P1copy = create_stack();
+      |                     ^~~~~~~~~~~~
+test.c:185:17: error: implicit declaration of function ‘pop’; did you mean ‘popen’? [-Werror=implicit-function-declaration]
+  185 |         dato2 = pop(P2);
+      |                 ^~~
+      |                 popen
+test.c:185:15: error: assignment to ‘void *’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+  185 |         dato2 = pop(P2);
+      |               ^
+test.c:186:14: error: assignment to ‘void *’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+  186 |         dato = pop(P1);
+      |              ^
+test.c:187:15: error: assignment to ‘void *’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+  187 |         dato3 = pop(Paux);
+      |               ^
+test.c:201:5: error: implicit declaration of function ‘imprime_y_vacia_pila’ [-Werror=implicit-function-declaration]
+  201 |     imprime_y_vacia_pila(P1copy);
+      |     ^~~~~~~~~~~~~~~~~~~~
+test.c: In function ‘test_parentesis_balanceados’:
+test.c:217:9: error: implicit declaration of function ‘parentesisBalanceados’; did you mean ‘test_parentesis_balanceados’? [-Werror=implicit-function-declaration]
+  217 |     if(!parentesisBalanceados(s)){
+      |         ^~~~~~~~~~~~~~~~~~~~~
+      |         test_parentesis_balanceados
+cc1: all warnings being treated as errors
+Compilation failed
+fd62013
