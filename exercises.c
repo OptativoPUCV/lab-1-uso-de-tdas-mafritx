@@ -5,7 +5,7 @@
 #include <ctype.h>
 #include "arraylist.h"
 #include "stack.h"
-
+#include "arraylist.c"
 //#include "exercises.h"
 
 //Funciones auxiliares que puedes utilizar para debuggear tus ejercicios
