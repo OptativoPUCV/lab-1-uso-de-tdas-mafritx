@@ -2829,3 +2829,16 @@ exercises.c:83:30: error: invalid use of incomplete typedef ‘List’
       |                              ^~
 Compilation failed
 f29fb45
+Sun 23 Mar 2025 08:23:00 PM UTC: 
+ exercises.c | 20 ++++++++++++++++++--
+ 1 file changed, 18 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+exercises.c: In function ‘sumaLista’:
+exercises.c:98:25: error: invalid use of incomplete typedef ‘List’
+   98 |    for (int i = 0; i < L->size; i++) {
+      |                         ^~
+exercises.c:99:30: error: invalid use of incomplete typedef ‘List’
+   99 |       int* elemento = (int*)L->data[i];
+      |                              ^~
+Compilation failed
+b42032c

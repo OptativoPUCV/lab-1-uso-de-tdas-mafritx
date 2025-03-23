@@ -41,7 +41,23 @@ debes reservar memoria para cada elemento que agregues.
 Al finalizar retorna la lista creada.
 */
 
+List* crea_lista() {
+   List* L = create_list();
 
+   for (int i = 1; i <= 10; i++) {
+      int* element = (int*)malloc(sizeof(int));
+      if (element == NULL) {
+         break; // Handle memory allocation failure
+      }
+      *element = i;
+      pushBack(L, element); // Add the element to the list
+   }
+
+   return L;
+}
+
+
+/*
 List* crea_lista() {
    List* L = create_list();
    
@@ -69,7 +85,7 @@ List* crea_lista() {
 
    return L;
 }
-
+*/
 
 /*
 Ejercicio 2.
@@ -85,7 +101,7 @@ int sumaLista(List *L) {
    }
    return suma;
 }
-// no se pq no me funciona nada lo dejo hasta aqui chao gracias
+
 /*
 Ejercicio 3.
 Crea una función que reciba una lista de punteros a int (int*) y
