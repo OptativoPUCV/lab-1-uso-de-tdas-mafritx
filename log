@@ -2142,3 +2142,42 @@ exercises.c:60:5: note: previous definition of ‘main’ with type ‘int()’
       |     ^~~~
 Compilation failed
 1e54315
+Sun 23 Mar 2025 06:09:17 PM UTC: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+exercises.c: In function ‘agrega_ele’:
+exercises.c:45:8: error: invalid use of incomplete typedef ‘List’
+   45 |   if (L->size < 100) {
+      |        ^~
+exercises.c:46:6: error: invalid use of incomplete typedef ‘List’
+   46 |     L->data[L->size] = ele;
+      |      ^~
+exercises.c:46:14: error: invalid use of incomplete typedef ‘List’
+   46 |     L->data[L->size] = ele;
+      |              ^~
+exercises.c:47:6: error: invalid use of incomplete typedef ‘List’
+   47 |     L->size++;
+      |      ^~
+exercises.c: In function ‘main’:
+exercises.c:71:29: error: invalid use of incomplete typedef ‘List’
+   71 |   for (int i = 0; i < myList->size; i++) {
+      |                             ^~
+exercises.c:72:32: error: invalid use of incomplete typedef ‘List’
+   72 |     printf("%d ", *(int*)myList->data[i]);
+      |                                ^~
+exercises.c:76:29: error: invalid use of incomplete typedef ‘List’
+   76 |   for (int i = 0; i < myList->size; i++) {
+      |                             ^~
+exercises.c:77:16: error: invalid use of incomplete typedef ‘List’
+   77 |     free(myList->data[i]);
+      |                ^~
+test.c: At top level:
+test.c:253:5: error: redefinition of ‘main’
+  253 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+exercises.c:60:5: note: previous definition of ‘main’ with type ‘int()’
+   60 | int main() {
+      |     ^~~~
+Compilation failed
+3a14370
