@@ -48,10 +48,13 @@ List* crea_lista() {
    for (int i = 1; i <= 10; i++) {
 
       if (L->size >= 100) {
-            break;
+         break;
       }
-        
+      
       int* element = (int*)malloc(sizeof(int));
+      if (element == NULL) {
+         break;
+      }
       *element = i;
 
         
