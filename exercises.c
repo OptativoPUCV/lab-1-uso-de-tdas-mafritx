@@ -49,7 +49,7 @@ typedef struct List {
 List* create_list() {
    List* L = (List*)malloc(sizeof(List));
    List->cap=10;
-   List->size=0
+   List->size=0;
    List->ele = (int**)malloc(10 * sizeof(int*));
    return L;
 }
