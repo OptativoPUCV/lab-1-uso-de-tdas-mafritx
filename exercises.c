@@ -69,7 +69,12 @@ List* crea_lista() {
 
    return L;
 }
-
+void free_list(List* L) {
+    for (int i = 0; i < L->size; i++) {
+        free(L->data[i]);  // Libera cada elemento
+    }
+    free(L);  // Libera la lista
+}
 
 /*
 Ejercicio 2.
