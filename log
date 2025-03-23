@@ -2873,3 +2873,14 @@ exercises.c:9:10: fatal error: exercises.h: No such file or directory
 compilation terminated.
 Compilation failed
 4c53c90
+Sun 23 Mar 2025 08:31:45 PM UTC: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+exercises.c: In function ‘copia_pila’:
+exercises.c:155:12: error: implicit declaration of function ‘is_empty’ [-Werror=implicit-function-declaration]
+  155 |    while (!is_empty(P1)) {
+      |            ^~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+d52bf19
