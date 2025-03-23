@@ -2369,3 +2369,9 @@ arraylist.c:102:5: note: previous definition of ‘get_size’ with type ‘int(
       |     ^~~~~~~~
 Compilation failed
 560bac4
+Sun 23 Mar 2025 06:39:37 PM UTC: 
+ exercises.c | 1 -
+ 1 file changed, 1 deletion(-)
+ tests:  0|5
+total_score: 0/70
+3c0bbba
