@@ -45,13 +45,7 @@ typedef struct {
     int cap;
     int size;
 } List;
-List* create_list() {
-   List* L = (List*)malloc(sizeof(List));
-   L->ele = (int**)malloc(10 * sizeof(int*));
-   L->cap = 10;
-   L->size = 0;
-   return L;
-}
+
 
 
 void agrega_ele(List* L, int* ele) {
