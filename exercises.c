@@ -84,8 +84,6 @@ int sumaLista(List *L) {
       suma += *elemento;
    }
    return suma;
-   
-   return 0;
 }
 
 /*
