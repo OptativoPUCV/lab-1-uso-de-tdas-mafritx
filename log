@@ -2211,3 +2211,22 @@ exercises.c:60:9: error: implicit declaration of function ‘append’ [-Werror=
 cc1: all warnings being treated as errors
 Compilation failed
 a56d7be
+Sun 23 Mar 2025 06:18:28 PM UTC: 
+ exercises.c | 34 ++++++++++++++++++++++++++--------
+ 1 file changed, 26 insertions(+), 8 deletions(-)
+In file included from test.c:5:
+exercises.c: In function ‘crea_lista’:
+exercises.c:63:46: error: invalid application of ‘sizeof’ to incomplete type ‘List’
+   63 |         List* newNode = (List*)malloc(sizeof(List));
+      |                                              ^~~~
+exercises.c:69:16: error: invalid use of incomplete typedef ‘List’
+   69 |         newNode->data = num;
+      |                ^~
+exercises.c:70:16: error: invalid use of incomplete typedef ‘List’
+   70 |         newNode->next = NULL;
+      |                ^~
+exercises.c:78:20: error: invalid use of incomplete typedef ‘List’
+   78 |             current->next = newNode;
+      |                    ^~
+Compilation failed
+7b3d39a
