@@ -40,13 +40,12 @@ Recuerda que la lista almacena punteros, por lo que
 debes reservar memoria para cada elemento que agregues.
 Al finalizar retorna la lista creada.
 */
-/*
-typedef struct List {
-   int** ele;
-   int cap;
-   int size;
+typedef struct {
+    int** ele;
+    int cap;
+    int size;
 } List;
-*/
+
 List* create_list() {
    List* L = (List*)malloc(sizeof(List));
    L->ele = (int**)malloc(10 * sizeof(int*));

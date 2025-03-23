@@ -1194,3 +1194,199 @@ exercises.c:88:5: note: previous definition of ‘main’ with type ‘int()’
       |     ^~~~
 Compilation failed
 4e9a30e
+Sun 23 Mar 2025 05:34:40 PM UTC: 
+ exercises.c | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+In file included from test.c:5:
+exercises.c:47:3: error: conflicting types for ‘List’; have ‘struct <anonymous>’
+   47 | } List;
+      |   ^~~~
+In file included from exercises.c:6:
+arraylist.h:4:21: note: previous declaration of ‘List’ with type ‘List’
+    4 | typedef struct List List;
+      |                     ^~~~
+exercises.c:49:7: error: conflicting types for ‘create_list’; have ‘List *()’
+   49 | List* create_list() {
+      |       ^~~~~~~~~~~
+arraylist.h:7:7: note: previous declaration of ‘create_list’ with type ‘List *()’
+    7 | List* create_list();
+      |       ^~~~~~~~~~~
+In file included from test.c:6:
+arraylist.c:14:7: error: conflicting types for ‘create_list’; have ‘List *()’ {aka ‘struct <anonymous> *()’}
+   14 | List* create_list() {
+      |       ^~~~~~~~~~~
+arraylist.h:7:7: note: previous declaration of ‘create_list’ with type ‘List *()’
+    7 | List* create_list();
+      |       ^~~~~~~~~~~
+arraylist.c: In function ‘create_list’:
+arraylist.c:16:4: error: ‘List’ {aka ‘struct <anonymous>’} has no member named ‘current’
+   16 |   L->current = 0;
+      |    ^~
+arraylist.c: At top level:
+arraylist.c:21:7: error: conflicting types for ‘first’; have ‘void *(List *)’ {aka ‘void *(struct <anonymous> *)’}
+   21 | void* first(List *L) {
+      |       ^~~~~
+arraylist.h:10:7: note: previous declaration of ‘first’ with type ‘void *(List *)’
+   10 | void* first(List *L);
+      |       ^~~~~
+arraylist.c: In function ‘first’:
+arraylist.c:25:4: error: ‘List’ {aka ‘struct <anonymous>’} has no member named ‘current’
+   25 |   L->current = 0;
+      |    ^~
+arraylist.c:26:11: error: ‘List’ {aka ‘struct <anonymous>’} has no member named ‘data’
+   26 |   return L->data[L->current];
+      |           ^~
+arraylist.c:26:19: error: ‘List’ {aka ‘struct <anonymous>’} has no member named ‘current’
+   26 |   return L->data[L->current];
+      |                   ^~
+arraylist.c: At top level:
+arraylist.c:29:7: error: conflicting types for ‘next’; have ‘void *(List *)’ {aka ‘void *(struct <anonymous> *)’}
+   29 | void* next(List *L) {
+      |       ^~~~
+arraylist.h:14:7: note: previous declaration of ‘next’ with type ‘void *(List *)’
+   14 | void* next(List *L);
+      |       ^~~~
+arraylist.c: In function ‘next’:
+arraylist.c:30:7: error: ‘List’ {aka ‘struct <anonymous>’} has no member named ‘current’
+   30 |   if(L->current < L->size - 1) {
+      |       ^~
+arraylist.c:31:6: error: ‘List’ {aka ‘struct <anonymous>’} has no member named ‘current’
+   31 |     L->current++;
+      |      ^~
+arraylist.c:32:13: error: ‘List’ {aka ‘struct <anonymous>’} has no member named ‘data’
+   32 |     return L->data[L->current];
+      |             ^~
+arraylist.c:32:21: error: ‘List’ {aka ‘struct <anonymous>’} has no member named ‘current’
+   32 |     return L->data[L->current];
+      |                     ^~
+arraylist.c: At top level:
+arraylist.c:37:6: error: conflicting types for ‘pushFront’; have ‘void(List *, void *)’ {aka ‘void(struct <anonymous> *, void *)’}
+   37 | void pushFront(List *L, void *dato) {
+      |      ^~~~~~~~~
+arraylist.h:17:6: note: previous declaration of ‘pushFront’ with type ‘void(List *, void *)’
+   17 | void pushFront(List *L, void *dato);
+      |      ^~~~~~~~~
+arraylist.c: In function ‘pushFront’:
+arraylist.c:39:6: error: ‘List’ {aka ‘struct <anonymous>’} has no member named ‘data’
+   39 |     L->data[0] = dato;
+      |      ^~
+arraylist.c:44:6: error: ‘List’ {aka ‘struct <anonymous>’} has no member named ‘data’
+   44 |     L->data[i] = L->data[i - 1];
+      |      ^~
+arraylist.c:44:19: error: ‘List’ {aka ‘struct <anonymous>’} has no member named ‘data’
+   44 |     L->data[i] = L->data[i - 1];
+      |                   ^~
+arraylist.c:46:4: error: ‘List’ {aka ‘struct <anonymous>’} has no member named ‘data’
+   46 |   L->data[0] = dato;
+      |    ^~
+arraylist.c: At top level:
+arraylist.c:50:6: error: conflicting types for ‘pushBack’; have ‘void(List *, void *)’ {aka ‘void(struct <anonymous> *, void *)’}
+   50 | void pushBack(List *L, void *dato) {
+      |      ^~~~~~~~
+arraylist.h:20:6: note: previous declaration of ‘pushBack’ with type ‘void(List *, void *)’
+   20 | void pushBack(List *L, void *dato);
+      |      ^~~~~~~~
+arraylist.c: In function ‘pushBack’:
+arraylist.c:51:4: error: ‘List’ {aka ‘struct <anonymous>’} has no member named ‘data’
+   51 |   L->data[L->size] = dato;
+      |    ^~
+arraylist.c: At top level:
+arraylist.c:55:6: error: conflicting types for ‘pushCurrent’; have ‘void(List *, void *)’ {aka ‘void(struct <anonymous> *, void *)’}
+   55 | void pushCurrent(List *L, void *dato) {
+      |      ^~~~~~~~~~~
+arraylist.h:23:6: note: previous declaration of ‘pushCurrent’ with type ‘void(List *, void *)’
+   23 | void pushCurrent(List *L, void *dato);
+      |      ^~~~~~~~~~~
+arraylist.c: In function ‘pushCurrent’:
+arraylist.c:57:6: error: ‘List’ {aka ‘struct <anonymous>’} has no member named ‘data’
+   57 |     L->data[0] = dato;
+      |      ^~
+arraylist.c:61:29: error: ‘List’ {aka ‘struct <anonymous>’} has no member named ‘current’
+   61 |   for(int i = L->size; i > L->current; i--) {
+      |                             ^~
+arraylist.c:62:6: error: ‘List’ {aka ‘struct <anonymous>’} has no member named ‘data’
+   62 |     L->data[i] = L->data[i - 1];
+      |      ^~
+arraylist.c:62:19: error: ‘List’ {aka ‘struct <anonymous>’} has no member named ‘data’
+   62 |     L->data[i] = L->data[i - 1];
+      |                   ^~
+arraylist.c:64:4: error: ‘List’ {aka ‘struct <anonymous>’} has no member named ‘data’
+   64 |   L->data[L->current + 1] = dato;
+      |    ^~
+arraylist.c:64:12: error: ‘List’ {aka ‘struct <anonymous>’} has no member named ‘current’
+   64 |   L->data[L->current + 1] = dato;
+      |            ^~
+arraylist.c: At top level:
+arraylist.c:68:7: error: conflicting types for ‘popFront’; have ‘void *(List *)’ {aka ‘void *(struct <anonymous> *)’}
+   68 | void* popFront(List *L) {
+      |       ^~~~~~~~
+arraylist.h:26:7: note: previous declaration of ‘popFront’ with type ‘void *(List *)’
+   26 | void *popFront(List *L);
+      |       ^~~~~~~~
+arraylist.c: In function ‘popFront’:
+arraylist.c:72:17: error: ‘List’ {aka ‘struct <anonymous>’} has no member named ‘data’
+   72 |   void* dato = L->data[0];
+      |                 ^~
+arraylist.c:74:6: error: ‘List’ {aka ‘struct <anonymous>’} has no member named ‘data’
+   74 |     L->data[i] = L->data[i + 1];
+      |      ^~
+arraylist.c:74:19: error: ‘List’ {aka ‘struct <anonymous>’} has no member named ‘data’
+   74 |     L->data[i] = L->data[i + 1];
+      |                   ^~
+arraylist.c: At top level:
+arraylist.c:80:7: error: conflicting types for ‘popBack’; have ‘void *(List *)’ {aka ‘void *(struct <anonymous> *)’}
+   80 | void* popBack(List *L) {
+      |       ^~~~~~~
+arraylist.h:29:7: note: previous declaration of ‘popBack’ with type ‘void *(List *)’
+   29 | void *popBack(List *L);
+      |       ^~~~~~~
+arraylist.c: In function ‘popBack’:
+arraylist.c:84:17: error: ‘List’ {aka ‘struct <anonymous>’} has no member named ‘data’
+   84 |   void* dato = L->data[L->size - 1];
+      |                 ^~
+arraylist.c: At top level:
+arraylist.c:89:7: error: conflicting types for ‘popCurrent’; have ‘void *(List *)’ {aka ‘void *(struct <anonymous> *)’}
+   89 | void* popCurrent(List *L) {
+      |       ^~~~~~~~~~
+arraylist.h:32:7: note: previous declaration of ‘popCurrent’ with type ‘void *(List *)’
+   32 | void *popCurrent(List *L);
+      |       ^~~~~~~~~~
+arraylist.c: In function ‘popCurrent’:
+arraylist.c:93:17: error: ‘List’ {aka ‘struct <anonymous>’} has no member named ‘data’
+   93 |   void* dato = L->data[L->current];
+      |                 ^~
+arraylist.c:93:25: error: ‘List’ {aka ‘struct <anonymous>’} has no member named ‘current’
+   93 |   void* dato = L->data[L->current];
+      |                         ^~
+arraylist.c:94:16: error: ‘List’ {aka ‘struct <anonymous>’} has no member named ‘current’
+   94 |   for(int i = L->current; i < L->size - 1; i++) {
+      |                ^~
+arraylist.c:95:6: error: ‘List’ {aka ‘struct <anonymous>’} has no member named ‘data’
+   95 |     L->data[i] = L->data[i + 1];
+      |      ^~
+arraylist.c:95:19: error: ‘List’ {aka ‘struct <anonymous>’} has no member named ‘data’
+   95 |     L->data[i] = L->data[i + 1];
+      |                   ^~
+arraylist.c:98:4: error: ‘List’ {aka ‘struct <anonymous>’} has no member named ‘current’
+   98 |   L->current--;
+      |    ^~
+arraylist.c: At top level:
+arraylist.c:102:5: error: conflicting types for ‘get_size’; have ‘int(List *)’ {aka ‘int(struct <anonymous> *)’}
+  102 | int get_size(List *L) {
+      |     ^~~~~~~~
+arraylist.h:35:5: note: previous declaration of ‘get_size’ with type ‘int(List *)’
+   35 | int get_size(List *L);
+      |     ^~~~~~~~
+test.c:253:5: error: redefinition of ‘main’
+  253 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+exercises.c:87:5: note: previous definition of ‘main’ with type ‘int()’
+   87 | int main() {
+      |     ^~~~
+arraylist.c: In function ‘first’:
+arraylist.c:27:1: error: control reaches end of non-void function [-Werror=return-type]
+   27 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+59fc9d2
