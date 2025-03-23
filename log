@@ -2274,3 +2274,18 @@ exercises.c:79:20: error: invalid use of incomplete typedef ‘List’
       |                    ^~
 Compilation failed
 751d820
+Sun 23 Mar 2025 06:29:44 PM UTC: 
+ exercises.c | 36 ------------------------------------
+ 1 file changed, 36 deletions(-)
+In file included from test.c:5:
+exercises.c: In function ‘crea_lista’:
+exercises.c:48:11: error: ‘L’ undeclared (first use in this function)
+   48 |    return L;
+      |           ^
+exercises.c:48:11: note: each undeclared identifier is reported only once for each function it appears in
+exercises.c:49:1: error: control reaches end of non-void function [-Werror=return-type]
+   49 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+432e1f2

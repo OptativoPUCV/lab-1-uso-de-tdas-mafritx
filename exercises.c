@@ -43,43 +43,7 @@ Al finalizar retorna la lista creada.
 
 
 List* crea_lista() {
-   List* L = create_list();
 
-   
-    List* L = NULL;      // Puntero al inicio de la lista
-    List* current = NULL; // Puntero para recorrer la lista
-
-    // Agregar punteros a elementos del 1 al 10
-    for (int i = 1; i <= 10; i++) {
-        // Reservar memoria para el entero
-        int* num = (int*)malloc(sizeof(int));
-        if (num == NULL) {
-            // Manejo de error en caso de que malloc falle
-            // (esto es opcional, dependiendo de los requisitos)
-            return NULL;
-        }
-        *num = i; // Asignar el valor correspondiente
-
-        // Crear un nuevo nodo directamente
-        List* temp = (List*)malloc(sizeof(List));
-        if (temp == NULL) {
-            // Manejo de error en caso de que malloc falle
-            free(num); // Liberar la memoria reservada para el entero
-            return NULL;
-        }
-        temp->data = num;
-        temp->next = NULL;
-
-        // Agregar el nuevo nodo a la lista
-        if (L == NULL) {
-            // Si la lista está vacía, el nuevo nodo es el primero
-            L = temp;
-        } else {
-            // Si la lista no está vacía, agregar el nuevo nodo al final
-            current->next = temp;
-        }
-        current = temp; // Mover el puntero al último nodo
-    }
 
    return L;
 }
