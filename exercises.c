@@ -48,23 +48,34 @@ typedef struct List {
 
 List* create_list() {
    List* L = (List*)malloc(sizeof(List));
+   List->ele = (int**)malloc(10 * sizeof(int*));
    List->cap=10;
    List->size=0;
-   List->ele = (int**)malloc(10 * sizeof(int*));
    return L;
 }
 
 void agrega_ele(List* L, int* ele) {
-   if (L->size == L->cap){
-      
+   if(L->size == L->cap){
+      L->cap *= 2;
+      L->ele = (int**)realloc(L->ele, L->cap * sizeof(int*));
    }
+   L->ele[L->size]=ele;
+
+   L->size++
 }
 
 List* crea_lista() {
    List* L = create_list();
+   for (int i = 1; i <= 10; i++) {
+      int *ele = (int*)malloc(sizeof(int));
+      *ele = i;
+      agrega_ele(L, ele);
+   }
+   
    return L;
 }
 
+Lis* free_lista
 /*
 Ejercicio 2.
 Crea una función que reciba una lista de enteros (int*) y 
