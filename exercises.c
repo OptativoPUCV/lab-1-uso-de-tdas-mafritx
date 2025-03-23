@@ -53,8 +53,9 @@ retorne la suma de sus elementos.
 
 int sumaLista(List *L) {
 
-}
 
+   return suma;
+}
 /*
 Ejercicio 3.
 Crea una función que reciba una lista de punteros a int (int*) y
