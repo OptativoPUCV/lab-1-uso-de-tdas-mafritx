@@ -75,7 +75,24 @@ List* crea_lista() {
    return L;
 }
 
-Lis* free_lista
+void free_lista(List* L) {
+   for (int i = 0; i < L->size ; i++){
+      free(L->ele[i]);
+   }
+   free(L->ele);
+   free(L);
+}
+
+
+int main() {
+   List* L = crea_lista();
+   for (int i = 0 ; i <- L->size; i++) {
+      print("%d", L->ele[i]);
+      
+   }
+   free_lista(L);
+   return 0;
+}
 /*
 Ejercicio 2.
 Crea una función que reciba una lista de enteros (int*) y 
