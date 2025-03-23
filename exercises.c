@@ -85,7 +85,7 @@ int sumaLista(List *L) {
    }
    return suma;
 }
-
+// no se pq no me funciona nada lo dejo hasta aqui chao gracias
 /*
 Ejercicio 3.
 Crea una función que reciba una lista de punteros a int (int*) y
