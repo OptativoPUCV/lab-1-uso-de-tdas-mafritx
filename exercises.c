@@ -6,7 +6,7 @@
 #include "arraylist.h"
 #include "stack.h"
 
-//#include "exercises.h"
+#include "exercises.h"
 
 //Funciones auxiliares que puedes utilizar para debuggear tus ejercicios
 //NO MODIFICAR
@@ -62,10 +62,10 @@ List* crea_lista() {
       L->size++;
    }
    for (int i = 0; i < L->size; i++) {
-        int* element = (int*)L->data[i];
-        printf("%d ", *element);
-    }
-    printf("\n");
+      int* element = (int*)L->data[i];
+      printf("%d ", *element);
+   }
+   printf("\n");
    return L;
 }
 
