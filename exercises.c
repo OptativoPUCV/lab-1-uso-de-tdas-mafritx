@@ -41,47 +41,47 @@ debes reservar memoria para cada elemento que agregues.
 Al finalizar retorna la lista creada.
 */
 
-
-
-
-void agrega_ele(List* L, int* ele) {
-   if(L->size == L->data){
-      L->cap *= 2;
-      L->ele = (int**)realloc(L->ele, L->cap * sizeof(int*));
-   }
-   L->ele[L->size] = ele;
-   L->size++;
+void agrega_ele(List* L, void* ele) {
+  if (L->size < 100) {
+    L->data[L->size] = ele;
+    L->size++;
+  }
 }
 
 
 List* crea_lista() {
+
    List* L = create_list();
-   for (int i = 1; i <= 10; i++) {
-      int* ele = (int*)malloc(sizeof(int));
-      *ele = i;
-      agrega_ele(L, ele);
-   }
+
    return L;
 }
 
 
-void free_lista(List* L) {
-   for (int i = 0; i < L->size ; i++){
-      free(L->ele[i]);
-   }
-   free(L->ele);
-   free(L);
-}
-
-
 int main() {
-   List* L = crea_lista();
-   for (int i = 0 ; i < L->size; i++) {
-      printf("%d\n", *L->ele[i]);
-   }
-   free_lista(L);
-   return 0;
+  
+  List* myList = create_list();
+
+  for (int i = 1; i <= 10; i++) {
+    int* ele = (int*)malloc(sizeof(int));
+    *ele = i;
+    agrega_ele(myList, ele);
+  }
+
+ 
+  for (int i = 0; i < myList->size; i++) {
+    printf("%d ", *(int*)myList->data[i]);
+  }
+  printf("\n");
+
+  for (int i = 0; i < myList->size; i++) {
+    free(myList->data[i]);
+  }
+
+  free(myList);
+
+  return 0;
 }
+
 /*
 Ejercicio 2.
 Crea una función que reciba una lista de enteros (int*) y 
