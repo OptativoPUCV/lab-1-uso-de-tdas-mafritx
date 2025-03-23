@@ -61,13 +61,13 @@ void agrega_ele(List* L, int* ele) {
    }
    L->ele[L->size]=ele;
 
-   L->size++
+   L->size++;
 }
 
 List* crea_lista() {
    List* L = create_list();
    for (int i = 1; i <= 10; i++) {
-      int *ele = (int*)malloc(sizeof(int));
+      int* ele = (int*)malloc(sizeof(int));
       *ele = i;
       agrega_ele(L, ele);
    }
