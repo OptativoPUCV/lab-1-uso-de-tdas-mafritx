@@ -45,7 +45,7 @@ Al finalizar retorna la lista creada.
 
 
 void agrega_ele(List* L, int* ele) {
-   if(L->size == L->cap){
+   if(L->size == L->data){
       L->cap *= 2;
       L->ele = (int**)realloc(L->ele, L->cap * sizeof(int*));
    }
