@@ -40,9 +40,25 @@ Recuerda que la lista almacena punteros, por lo que
 debes reservar memoria para cada elemento que agregues.
 Al finalizar retorna la lista creada.
 */
+typedef struct List {
+   int** ele;
+   int cap;
+   int size;
+} List;
 
-/* poto caca pichi probando 123
-*/
+List* create_list() {
+   List* L = (List*)malloc(sizeof(List));
+   List->cap=10;
+   List->size=0
+   List->ele = (int**)malloc(10 * sizeof(int*));
+   return L;
+}
+
+void agrega_ele(List* L, int* ele) {
+   if (L->size == L->cap){
+      
+   }
+}
 
 List* crea_lista() {
    List* L = create_list();
