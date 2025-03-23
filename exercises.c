@@ -45,24 +45,24 @@ typedef struct {
     int cap;
     int size;
 } List;
-
 List* create_list() {
    List* L = (List*)malloc(sizeof(List));
    L->ele = (int**)malloc(10 * sizeof(int*));
-   L->cap=10;
-   L->size=0;
+   L->cap = 10;
+   L->size = 0;
    return L;
 }
+
 
 void agrega_ele(List* L, int* ele) {
    if(L->size == L->cap){
       L->cap *= 2;
       L->ele = (int**)realloc(L->ele, L->cap * sizeof(int*));
    }
-   L->ele[L->size]=ele;
-
+   L->ele[L->size] = ele;
    L->size++;
 }
+
 
 List* crea_lista() {
    List* L = create_list();
@@ -71,9 +71,9 @@ List* crea_lista() {
       *ele = i;
       agrega_ele(L, ele);
    }
-   
    return L;
 }
+
 
 void free_lista(List* L) {
    for (int i = 0; i < L->size ; i++){
@@ -86,9 +86,8 @@ void free_lista(List* L) {
 
 int main() {
    List* L = crea_lista();
-   for (int i = 0 ; i <- L->size; i++) {
-      printf("%d", *L->ele[i]);
-      
+   for (int i = 0 ; i < L->size; i++) {
+      printf("%d\n", *L->ele[i]);
    }
    free_lista(L);
    return 0;
