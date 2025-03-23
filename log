@@ -2626,3 +2626,28 @@ exercises.c:67:4: error: control reaches end of non-void function [-Werror=retur
 cc1: all warnings being treated as errors
 Compilation failed
 ea46f36
+Sun 23 Mar 2025 07:34:28 PM UTC: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+exercises.c: In function ‘crea_lista’:
+exercises.c:50:12: error: invalid use of incomplete typedef ‘List’
+   50 |       if (L->size >= 100) {
+      |            ^~
+exercises.c:61:8: error: invalid use of incomplete typedef ‘List’
+   61 |       L->data[L->size] = (void*)element;
+      |        ^~
+exercises.c:61:16: error: invalid use of incomplete typedef ‘List’
+   61 |       L->data[L->size] = (void*)element;
+      |                ^~
+exercises.c:62:8: error: invalid use of incomplete typedef ‘List’
+   62 |       L->size++;
+      |        ^~
+exercises.c:64:25: error: invalid use of incomplete typedef ‘List’
+   64 |    for (int i = 0; i < L->size; i++) {
+      |                         ^~
+exercises.c:65:29: error: invalid use of incomplete typedef ‘List’
+   65 |       int* element = (int*)L->data[i];
+      |                             ^~
+Compilation failed
+74751c9
