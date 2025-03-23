@@ -2842,3 +2842,13 @@ exercises.c:99:30: error: invalid use of incomplete typedef ‘List’
       |                              ^~
 Compilation failed
 b42032c
+Sun 23 Mar 2025 08:27:05 PM UTC: 
+ exercises.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+test.c: In function ‘test_suma_lista’:
+test.c:100:17: error: implicit declaration of function ‘sumaLista’ [-Werror=implicit-function-declaration]
+  100 |     int suma2 = sumaLista(L);
+      |                 ^~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+eae1caa

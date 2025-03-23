@@ -55,8 +55,6 @@ List* crea_lista() {
 
    return L;
 }
-
-
 /*
 List* crea_lista() {
    List* L = create_list();
@@ -92,6 +90,7 @@ Ejercicio 2.
 Crea una función que reciba una lista de enteros (int*) y 
 retorne la suma de sus elementos.
 */
+/*
 int sumaLista(List *L) {
    int suma = 0;
 
@@ -101,7 +100,7 @@ int sumaLista(List *L) {
    }
    return suma;
 }
-
+*/
 /*
 Ejercicio 3.
 Crea una función que reciba una lista de punteros a int (int*) y
