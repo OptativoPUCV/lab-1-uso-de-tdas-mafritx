@@ -41,6 +41,9 @@ debes reservar memoria para cada elemento que agregues.
 Al finalizar retorna la lista creada.
 */
 
+/* poto caca pichi probando 123
+*/
+
 List* crea_lista() {
    List* L = create_list();
    return L;
