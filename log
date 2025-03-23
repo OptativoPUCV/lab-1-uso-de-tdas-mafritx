@@ -2401,3 +2401,19 @@ exercises.c:61:22: error: expected ‘;’ before ‘}’ token
       |    ~                  
 Compilation failed
 ecb3b8e
+Sun 23 Mar 2025 06:52:30 PM UTC: 
+ exercises.c | 15 +++------------
+ 1 file changed, 3 insertions(+), 12 deletions(-)
+In file included from test.c:5:
+exercises.c: In function ‘crea_lista’:
+exercises.c:53:10: error: invalid use of incomplete typedef ‘List’
+   53 |         L->data[L->size] = element;
+      |          ^~
+exercises.c:53:18: error: invalid use of incomplete typedef ‘List’
+   53 |         L->data[L->size] = element;
+      |                  ^~
+exercises.c:54:10: error: invalid use of incomplete typedef ‘List’
+   54 |         L->size++;
+      |          ^~
+Compilation failed
+ac65c02
