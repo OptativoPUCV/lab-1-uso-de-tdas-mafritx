@@ -47,7 +47,7 @@ List* crea_lista() {
    
    for (int i = 1; i <= 10; i++) {
 
-      if (L->size >= 99) {
+      if (L->size >= 100) {
          break;
       }
       
