@@ -3121,3 +3121,9 @@ test.c:132:5: error: implicit declaration of function ‘eliminaElementos’; di
 cc1: all warnings being treated as errors
 Compilation failed
 74da7b1
+Sun 23 Mar 2025 09:12:08 PM UTC: 
+ exercises.c | 2 ++
+ 1 file changed, 2 insertions(+)
+ tests:  2|3
+total_score: 20/70
+18d58ef
