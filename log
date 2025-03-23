@@ -2863,3 +2863,13 @@ exercises.c:155:12: error: implicit declaration of function ‘is_empty’ [-Wer
 cc1: all warnings being treated as errors
 Compilation failed
 a7e25e4
+Sun 23 Mar 2025 08:29:27 PM UTC: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+exercises.c:9:10: fatal error: exercises.h: No such file or directory
+    9 | #include "exercises.h"
+      |          ^~~~~~~~~~~~~
+compilation terminated.
+Compilation failed
+4c53c90
