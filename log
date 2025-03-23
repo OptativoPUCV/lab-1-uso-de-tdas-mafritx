@@ -2417,3 +2417,26 @@ exercises.c:54:10: error: invalid use of incomplete typedef ‘List’
       |          ^~
 Compilation failed
 ac65c02
+Sun 23 Mar 2025 07:14:32 PM UTC: 
+ exercises.c | 5 +++++
+ 1 file changed, 5 insertions(+)
+In file included from test.c:5:
+exercises.c: In function ‘crea_lista’:
+exercises.c:50:12: error: invalid use of incomplete typedef ‘List’
+   50 |       if (L->size >= MAX_SIZE) {
+      |            ^~
+exercises.c:50:22: error: ‘MAX_SIZE’ undeclared (first use in this function)
+   50 |       if (L->size >= MAX_SIZE) {
+      |                      ^~~~~~~~
+exercises.c:50:22: note: each undeclared identifier is reported only once for each function it appears in
+exercises.c:58:8: error: invalid use of incomplete typedef ‘List’
+   58 |       L->data[L->size] = element;
+      |        ^~
+exercises.c:58:16: error: invalid use of incomplete typedef ‘List’
+   58 |       L->data[L->size] = element;
+      |                ^~
+exercises.c:59:8: error: invalid use of incomplete typedef ‘List’
+   59 |       L->size++;
+      |        ^~
+Compilation failed
+182da17

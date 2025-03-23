@@ -44,18 +44,22 @@ Al finalizar retorna la lista creada.
 
 List* crea_lista() {
    List* L = create_list();
+   
    for (int i = 1; i <= 10; i++) {
+
+      if (L->size >= MAX_SIZE) {
+            break;
+      }
         
-        int* element = (int*)malloc(sizeof(int));
-        *element = i;
+      int* element = (int*)malloc(sizeof(int));
+      *element = i;
 
         
-        L->data[L->size] = element;
-        L->size++;
+      L->data[L->size] = element;
+      L->size++;
     }
    return L;
 }
-
 
 
 /*
