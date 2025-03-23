@@ -87,7 +87,7 @@ void free_lista(List* L) {
 int main() {
    List* L = crea_lista();
    for (int i = 0 ; i <- L->size; i++) {
-      printf("%d", L->ele[i]);
+      printf("%d", *L->ele[i]);
       
    }
    free_lista(L);
