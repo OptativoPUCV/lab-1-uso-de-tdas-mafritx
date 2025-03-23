@@ -1116,3 +1116,81 @@ arraylist.c:27:1: error: control reaches end of non-void function [-Werror=retur
 cc1: all warnings being treated as errors
 Compilation failed
 5132a90
+Sun 23 Mar 2025 05:22:31 PM UTC: 
+ exercises.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+exercises.c: In function ‘create_list’:
+exercises.c:51:35: error: invalid application of ‘sizeof’ to incomplete type ‘List’
+   51 |    List* L = (List*)malloc(sizeof(List));
+      |                                   ^~~~
+exercises.c:52:5: error: invalid use of incomplete typedef ‘List’
+   52 |    L->ele = (int**)malloc(10 * sizeof(int*));
+      |     ^~
+exercises.c:53:5: error: invalid use of incomplete typedef ‘List’
+   53 |    L->cap=10;
+      |     ^~
+exercises.c:54:5: error: invalid use of incomplete typedef ‘List’
+   54 |    L->size=0;
+      |     ^~
+exercises.c: In function ‘agrega_ele’:
+exercises.c:59:8: error: invalid use of incomplete typedef ‘List’
+   59 |    if(L->size == L->cap){
+      |        ^~
+exercises.c:59:19: error: invalid use of incomplete typedef ‘List’
+   59 |    if(L->size == L->cap){
+      |                   ^~
+exercises.c:60:8: error: invalid use of incomplete typedef ‘List’
+   60 |       L->cap *= 2;
+      |        ^~
+exercises.c:61:8: error: invalid use of incomplete typedef ‘List’
+   61 |       L->ele = (int**)realloc(L->ele, L->cap * sizeof(int*));
+      |        ^~
+exercises.c:61:32: error: invalid use of incomplete typedef ‘List’
+   61 |       L->ele = (int**)realloc(L->ele, L->cap * sizeof(int*));
+      |                                ^~
+exercises.c:61:40: error: invalid use of incomplete typedef ‘List’
+   61 |       L->ele = (int**)realloc(L->ele, L->cap * sizeof(int*));
+      |                                        ^~
+exercises.c:63:5: error: invalid use of incomplete typedef ‘List’
+   63 |    L->ele[L->size]=ele;
+      |     ^~
+exercises.c:63:12: error: invalid use of incomplete typedef ‘List’
+   63 |    L->ele[L->size]=ele;
+      |            ^~
+exercises.c:65:5: error: invalid use of incomplete typedef ‘List’
+   65 |    L->size++;
+      |     ^~
+exercises.c: In function ‘free_lista’:
+exercises.c:80:25: error: invalid use of incomplete typedef ‘List’
+   80 |    for (int i = 0; i < L->size ; i++){
+      |                         ^~
+exercises.c:81:13: error: invalid use of incomplete typedef ‘List’
+   81 |       free(L->ele[i]);
+      |             ^~
+exercises.c:83:10: error: invalid use of incomplete typedef ‘List’
+   83 |    free(L->ele);
+      |          ^~
+exercises.c: In function ‘main’:
+exercises.c:90:27: error: invalid use of incomplete typedef ‘List’
+   90 |    for (int i = 0 ; i <- L->size; i++) {
+      |                           ^~
+exercises.c:91:22: error: invalid use of incomplete typedef ‘List’
+   91 |       printf("%d", *L->ele[i]);
+      |                      ^~
+In file included from test.c:6:
+arraylist.c: At top level:
+arraylist.c:14:7: error: redefinition of ‘create_list’
+   14 | List* create_list() {
+      |       ^~~~~~~~~~~
+exercises.c:50:7: note: previous definition of ‘create_list’ with type ‘List *()’ {aka ‘struct List *()’}
+   50 | List* create_list() {
+      |       ^~~~~~~~~~~
+test.c:253:5: error: redefinition of ‘main’
+  253 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+exercises.c:88:5: note: previous definition of ‘main’ with type ‘int()’
+   88 | int main() {
+      |     ^~~~
+Compilation failed
+4e9a30e
