@@ -47,7 +47,7 @@ List* crea_lista() {
    
    for (int i = 1; i <= 10; i++) {
 
-      if (L->size >= 100) {
+      if (L->size >= 99) {
          break;
       }
       
@@ -69,12 +69,7 @@ List* crea_lista() {
 
    return L;
 }
-void free_list(List* L) {
-    for (int i = 0; i < L->size; i++) {
-        free(L->data[i]);  // Libera cada elemento
-    }
-    free(L);  // Libera la lista
-}
+
 
 /*
 Ejercicio 2.
