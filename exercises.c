@@ -74,7 +74,14 @@ posiciona en el elemento anterior.
 */
 
 void eliminaElementos(List*L, int elem) {
-
+    int *dato = (int*)first(L);
+    while (dato != NULL) {
+        if (*dato == elem) {
+            popCurrent(L);
+        } else {
+            dato = (int*)next(L);
+        }
+    }
 }
 
 /*
@@ -85,6 +92,15 @@ Puedes usar una pila auxiliar.
 */
 
 void copia_pila(Stack* P1, Stack* P2) {
+   Stack* Paux = create_stack();
+   void *dato;
+   while ((dato = pop(P1)) != NULL) {
+      push(Paux, dato);
+   }
+   while ((dato = pop(Paux)) != NULL) {
+      push(P1, dato);
+      push(P2, dato);
+   }
 }
 
 /*
@@ -95,5 +111,19 @@ paraéntesis balanceados. Retorna 1 si están balanceados,
 */
 
 int parentesisBalanceados(char *cadena) {
-   return 0;
+   Stack* P = create_stack();
+   for (int i = 0; i < strlen(cadena); i++) {
+      if (cadena[i] == '(' || cadena[i] == '[' || cadena[i] == '{') {
+         push(P, &cadena[i]);
+      } else if (cadena[i] == ')' || cadena[i] == ']' || cadena[i] == '}') {
+         if (get_size(P) == 0) return 0;
+         char *top_char = (char*)pop(P);
+         if ((cadena[i] == ')' && *top_char != '(') ||
+             (cadena[i] == ']' && *top_char != '[') ||
+             (cadena[i] == '}' && *top_char != '{')) {
+            return 0;
+         }
+      }
+   }
+   return get_size(P) == 0;
 }
